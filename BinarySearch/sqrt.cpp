@@ -36,3 +36,4 @@ int main() {
     cout <<" Enter the number " << endl;
     cin >> n;
     return 0;
+}
