@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://www.tutorialride.com/cpp/dynamic-memory-allocation-in-c.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Dynamic Memory Allocation in C++
+</title><meta name="robots" content="index, follow"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="./Dynamic Memory Allocation in C++_files/style-tutorial-1.css" type="text/css" rel="stylesheet">
+ <script async="" src="./Dynamic Memory Allocation in C++_files/analytics.js.download"></script><script type="text/javascript">
+        var wi = window, docu = document, el = docu.documentElement, bo = docu.getElementsByTagName('body')[0], scrWidth = wi.innerWidth || el.clientWidth || bo.clientWidth;
+        var isMobile = false;
+        if (scrWidth < 601) {
+            isMobile = true;
+        }
+    </script>
+<meta name="Description" content="C++ Dynamic Memory Allocation - Tutorial to learn C++ Dynamic Memory Allocation in simple, easy and step by step way with syntax, examples and notes. Covers topics like Introduction to dynamic memory allocation, Difference between Static Memory &amp; Dynamic Memory, New Operator, Delete Operator, Dynamic Memory Allocation for Objects etc."><meta name="og:image" content="/images/cpp-tutorial.jpeg"><style>[object HTMLStyleElement]</style></head>
+<body>
+
+
+
+<script type="text/javascript" src="./Dynamic Memory Allocation in C++_files/header.js.download"> </script><header><nav><ul><li><a href="https://www.tutorialride.com/tutorials.htm">Tutorials</a></li><li><a href="https://www.tutorialride.com/questions-and-answers.htm" class="abtus_btn">Questions Answers</a></li><li><a href="https://www.tutorialride.com/programs.htm" class="abtus_btn">Programs</a></li><li><a href="https://www.tutorialride.com/online-test.htm" class="abtus_btn">Online Test</a></li><li><a href="https://www.tutorialride.com/group-discussion-topic.htm" class="abtus_btn">GD</a></li><li><a href="https://www.tutorialride.com/logical-reasoning-questions.htm" class="abtus_btn">Reasoning</a></li><li><a href="https://www.tutorialride.com/aptitude-questions.htm" class="abtus_btn">Aptitude</a></li><div class="clear"></div></ul></nav><div class="container_16"><div class="grid_6"><button class="leftcolumn-toggle"></button><div class="logo"><a href="https://www.tutorialride.com/"><img src="./Dynamic Memory Allocation in C++_files/logo.png" border="0"></a></div></div>
+
+<div class="grid_10">
+<div class="headertopright">
+<div class="social-icons">
+<ul>
+<li><a onclick="this.setAttribute(&#39;href&#39;, &#39;http://www.facebook.com/sharer.php?u=&#39;+encodeURIComponent(location.href)+&#39;&amp;t=&#39;+encodeURIComponent(document.title))" target="_blank" href="https://www.tutorialride.com/cpp/dynamic-memory-allocation-in-c.htm#" rel="nofollow"><img border="0" src="./Dynamic Memory Allocation in C++_files/facebookIcon.png" <="" a=""></a></li><a onclick="this.setAttribute(&#39;href&#39;, &#39;http://www.facebook.com/sharer.php?u=&#39;+encodeURIComponent(location.href)+&#39;&amp;t=&#39;+encodeURIComponent(document.title))" target="_blank" href="https://www.tutorialride.com/cpp/dynamic-memory-allocation-in-c.htm#" rel="nofollow">
+</a><li><a onclick="this.setAttribute(&#39;href&#39;, &#39;http://www.facebook.com/sharer.php?u=&#39;+encodeURIComponent(location.href)+&#39;&amp;t=&#39;+encodeURIComponent(document.title))" target="_blank" href="https://www.tutorialride.com/cpp/dynamic-memory-allocation-in-c.htm#" rel="nofollow"></a><a onclick="this.setAttribute(&#39;href&#39;, &#39;http://twitter.com/share?url=&#39;+encodeURIComponent(location.href)+&#39;&amp;t=&#39;+encodeURIComponent(document.title))" target="_blank" href="https://www.tutorialride.com/cpp/dynamic-memory-allocation-in-c.htm#" rel="nofollow"><img border="0" src="./Dynamic Memory Allocation in C++_files/twitterIcon.png"></a></li>
+<li><a onclick="this.setAttribute(&#39;href&#39;, &#39;https://www.linkedin.com/cws/share?url=&#39;+encodeURIComponent(location.href)+&#39;&amp;title=&#39;+encodeURIComponent(document.title))" target="_blank" href="https://www.tutorialride.com/cpp/dynamic-memory-allocation-in-c.htm#" rel="nofollow"><img border="0" src="./Dynamic Memory Allocation in C++_files/linkedinIcon.png"></a></li>
+<li><a onclick="this.setAttribute(&#39;href&#39;, &#39;https://plus.google.com/share?url=&#39;+encodeURIComponent(location.href)+&#39;&amp;t=&#39;+encodeURIComponent(document.title))" target="_blank" href="https://www.tutorialride.com/cpp/dynamic-memory-allocation-in-c.htm#" rel="nofollow"><img border="0" src="./Dynamic Memory Allocation in C++_files/googlePlusIcon.png"></a></li>
+</ul>
+</div> 
+<div class="clear"></div>
+</div>
+</div> 
+</div>
+</header>
+
+<section class="middle-sec">
+   <div class="container_16">
+        <div class="grid_11">
+            <div class="pagedata-inner">
+	    <h1>Dynamic Memory Allocation in C++</h1>
+	    <div class="breadcrumb"> 
+            <ul>
+              <li><div><a href="https://www.tutorialride.com/">Home</a> &gt; <a href="https://www.tutorialride.com/programming-languages.htm">Programming languages </a> &gt; CPP </div></li>
+              <div class="clear"></div>
+            </ul>
+            </div>
+            <div class="nextprev">
+                <ul>
+                    <li><a href="https://www.tutorialride.com/cpp/destructor-in-c.htm">« Previous</a></li>
+                    <li><a href="https://www.tutorialride.com/cpp/operator-overloading-in-c.htm">Next »</a></li>
+                    <div class="clr"></div>
+                </ul>
+            </div>
+        
+	    <div class="menu-items-left">
+                <ul><h6>Tutorial</h6><li><a href="https://www.tutorialride.com/cpp/c-tutorial.htm" title="C++ Tutorial">C++ Introduction</a></li><li><a href="https://www.tutorialride.com/cpp/classes-and-objects-in-c.htm" title="Classes and Objects in C++">C++ Classes and Objects</a></li><li><a href="https://www.tutorialride.com/cpp/decision-making-looping-structure-in-c.htm" title="Decision Making &amp; Looping Structure in C++">C++ Decision Making</a></li><li><a href="https://www.tutorialride.com/cpp/functions-in-c.htm" title="Functions in C++">C++ Functions</a></li><li><a href="https://www.tutorialride.com/cpp/arrays-in-c.htm" title="Arrays in C++">C++ Arrays</a></li><li><a href="https://www.tutorialride.com/cpp/strings-in-c.htm" title="Strings in C++">C++ Strings</a></li><li><a href="https://www.tutorialride.com/cpp/pointer-in-c.htm" title="Pointer in C++">C++ Pointer</a></li><li><a href="https://www.tutorialride.com/cpp/structure-in-c.htm" title="Structure in C++">C++ Structure</a></li><li><a href="https://www.tutorialride.com/cpp/constructor-destructor-in-c.htm" title="Constructor &amp; Destructor in C++">C++ Constructor &amp; Destructor</a></li><li><a href="https://www.tutorialride.com/cpp/dynamic-memory-allocation-in-c.htm" title="Dynamic Memory Allocation in C++" class="active">C++ Dynamic Memory Allocation</a></li><li><a href="https://www.tutorialride.com/cpp/operator-overloading-in-c.htm" title="Operator Overloading in C++">C++ Operator Overloading</a></li><li><a href="https://www.tutorialride.com/cpp/inheritance-in-c.htm" title="Inheritance in C++">C++ Inheritance</a></li><li><a href="https://www.tutorialride.com/cpp/managing-io-console-using-c.htm" title="Managing I/O Console using C++">C++ I/O Console</a></li><li><a href="https://www.tutorialride.com/cpp/templates-in-c.htm" title="Templates in C++">C++ Templates</a></li><li><a href="https://www.tutorialride.com/cpp/exception-handling-in-c.htm" title="Exception Handling in C++">C++ Exception Handling</a></li><li><a href="https://www.tutorialride.com/cpp/multithreading-in-c.htm" title="Multithreading in C++">C++ Multithreading</a></li></ul>              
+            </div>              
+            <section class="ads-sec-new">
+		<script async="" src="./Dynamic Memory Allocation in C++_files/f.txt"></script>
+		<!-- TR_Content_Top_Responsive -->
+		<script type="text/javascript">
+		if (isMobile) {
+			document.write('<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6836604883057248" data-ad-slot="7510533368"></ins>');
+		} else
+		{
+            		document.write('<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6836604883057248" data-ad-slot="7510533368" data-ad-format="auto"></ins>');
+		}
+		</script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6836604883057248" data-ad-slot="7510533368" data-ad-format="auto"></ins>	
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>    
+            </section>    
+            
+            <div class="paratitle1"><b>Memory is divided into two parts:</b><br>
+1. Stack <br>
+2. Heap <br>
+<br>
+<b>1. In stack,</b> all the variables declared inside the function take up memory from the stack.<br>
+<br>
+<b>2. Heap</b> is unused memory of the program and used for allocating the memory dynamically when program runs.<h2>Difference between Static Memory and Dynamic Memory</h2><b>Following are the differences between Static Memory Allocation and Dynamic Memory Allocation:</b><br>
+<br>
+<table class="tablecontent"><tbody><tr><th>Static Memory Allocation</th><th>Dynamic Memory Allocation</th></tr><tr><td>In static memory allocation, memory is allocated <b>before the execution</b> of the program begins.</td><td>In Dynamic memory allocation, memory is allocated <b>during the execution</b> of the program.</td></tr><tr><td>Memory allocation and deallocation actions are not performed during the execution.</td><td>Memory allocation and deallocation actions are performed during the execution.</td></tr><tr><td>Static memory allocation, pointer is required to access the variables.</td><td>It does not require pointers to allocate&nbsp;&nbsp;the variables dynamically.</td></tr><tr><td>It performs execution of program faster than dynamic memory.</td><td>It performs execution of program slower than static.</td></tr><tr><td>It requires more memory space.</td><td>It requires less memory space.</td></tr><tr><td>The data in static memory is allocated permanently.</td><td>The data in dynamic memory is allocated only when program unit is active.</td></tr></tbody></table><h2>New Operator</h2><ul><li>New operator is used to dynamically allocate the memory.</li><li>The <b>new</b> keyword is used to allocate the memory space dynamically followed by a data type specifier.</li><br>
+<b>Syntax:</b><br>
+<div class="code-box">new int;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//dynamically allocates an integer<br>
+new float;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//dynamically allocates an float</div><br>
+<li>For creating an array dynamically, use the same form but put the square brackets ([]) with a size after the data type.</li><br>
+<b>Syntax:</b><br>
+<div class="code-box">new int[10];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//dynamically allocates an array of 10 integers.<br>
+new float[10];&nbsp;&nbsp;&nbsp;&nbsp;//dynamically allocates an array of 10 floats.</div><br>
+<li>In the above syntax, the allocated spaces have no names, but the new operator returns the starting address of the allocated space and stored it in a pointer.</li><br>
+<b>Syntax:</b><br>
+<div class="code-box">int *ptr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//declare a pointer ptr<br>
+ptr = new int;&nbsp;&nbsp;&nbsp;&nbsp;//dynamically allocate an int and load address into ptr</div></ul><h2>Delete Operator</h2><ul><li>Delete operator is used to deallocate the memory.</li><li>This operator deallocates the memory previously allocated by the new operator.</li><li>If the memory allocated dynamically to a variable is not required anymore, you can free up the memory with delete operator.</li><br>
+<b>Syntax:</b><br>
+<span class="selected-yellow">delete variable_name;</span><br>
+<br>
+<b>Example:</b><br>
+<span class="selected-yellow">delete ptr;&nbsp;&nbsp;&nbsp;&nbsp;//Releases memory pointed to by ptr</span><br>
+<br>
+<li>Using delete operator the memory becomes available again for other requests of dynamic memory.</li></ul><div class="code-box"><h4>Example : Demonstrating how new &amp; delete operators work</h4><p>#include &lt;iostream&gt;<br>
+using namespace std;<br>
+int main ()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int *ptr&nbsp;&nbsp;= NULL;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Pointer initialized with null<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ptr&nbsp;&nbsp;= new int;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Request memory for the variable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*ptr = 12345;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Store value at allocated address<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Value of Pointer Variable *ptr : " &lt;&lt; *ptr &lt;&lt; endl;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete ptr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// free up the memory.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}</p></div><br>
+<b>Output:</b><br>
+Value of Pointer Variable *ptr : 12345<h2>Dynamic Memory Allocation for Objects</h2><div class="code-box"><h4>Example : Demonstrating the dynamic memory allocation using an array of objects</h4><p>#include &lt;iostream&gt;<br>
+using namespace std;<br>
+class Test<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Constructor called..." &lt;&lt;endl; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~Test() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Destructor called!!" &lt;&lt;endl; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+};<br>
+int main( )<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test* t = new Test[2];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete [] t;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Delete array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}</p></div><br>
+<b>Output:</b><br>
+Constructor called...<br>
+Constructor called...<br>
+Destructor called!!<br>
+Destructor called!!<br>
+<br>
+In the above example, to allocate an array of two <b>Test</b> objects, the simple constructor would be called two times and similarly while deleting these objects, the destructor will also be called same number of times.</div>
+            
+            <div class="ad-bottom-new">
+
+		<script async="" src="./Dynamic Memory Allocation in C++_files/f.txt"></script>
+		<!-- TR_Content_Bottom_300X250 -->
+		<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6836604883057248" data-ad-slot="4761081092"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+
+	    </div>
+	    <div class="nextprev">
+                <ul>
+                    <li><a href="https://www.tutorialride.com/cpp/destructor-in-c.htm">« Previous</a></li>
+                    <li><a href="https://www.tutorialride.com/cpp/operator-overloading-in-c.htm">Next »</a></li>
+                    <div class="clr"></div>
+                </ul>
+            </div>
+		<div class="ad-bottom-new">
+			<script async="" src="./Dynamic Memory Allocation in C++_files/f.txt"></script>
+			<!-- CM_TR_HP_TC_Responsive -->
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6836604883057248" data-ad-slot="5997798267" data-ad-format="link"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+		</div>			
+             </div>
+             </div>
+        
+             <div class="grid_5">
+                     <div class="pagedata-right">
+			<ul>
+        	<li>
+                                    <script async="" src="./Dynamic Memory Allocation in C++_files/f.txt"></script>
+					<!-- CM_TR_AP_Sidebar_Responsive -->
+                                    <script type="text/javascript">
+				    if (!isMobile) { 	
+					document.write('<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6836604883057248" data-ad-slot="5466906101" data-ad-format="auto"></ins>');
+				    }
+			            </script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6836604883057248" data-ad-slot="5466906101" data-ad-format="auto"></ins>	
+				    <script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+          	</li>
+          	<li>
+  	                                <script async="" src="./Dynamic Memory Allocation in C++_files/f.txt"></script>
+                                    <!-- CM_TR_Sidebar_300x2600 -->
+				    <script type="text/javascript">
+				    if (!isMobile) {	
+					    document.write('<ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-6836604883057248" data-ad-slot="9761783459" data-ad-format="vertical"></ins>'); 
+				     } 	
+				    </script><ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-6836604883057248" data-ad-slot="9761783459" data-ad-format="vertical"></ins>	
+                                    <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script> 
+            	</li>  	
+		<div class="related-topics">
+                	<ul><h4>Related Topics</h4><li><a href="https://www.tutorialride.com/c-programming/c-programming-tutorial.htm" title="C Programming Tutorial">C Programming </a></li><li><a href="https://www.tutorialride.com/cpp/c-tutorial.htm" title="C++ Tutorial">CPP </a></li><li><a href="https://www.tutorialride.com/csharp/c-sharp-tutorial.htm" title="C# Tutorial">CSharp </a></li><li><a href="https://www.tutorialride.com/operating-system/operating-system-tutorial.htm" title="Operating System Tutorial">Operating System </a></li><li><a href="https://www.tutorialride.com/data-structures/data-structure-tutorial.htm" title="Data Structure Tutorial">Data Structures </a></li><li><a href="https://www.tutorialride.com/oop-concepts/oop-concepts-pillars-of-object-oriented-programming.htm" title="OOP Concepts - Pillars of Object Oriented Programming">OOP Concepts </a></li></ul>              
+        	</div>                                                            
+          	<li>
+  	                                <script async="" src="./Dynamic Memory Allocation in C++_files/f.txt"></script>
+                                    <!-- CM_TR_Sidebar_300x2600 -->
+				    <script type="text/javascript">
+				    if (isMobile) {	
+                                         document.write('<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6836604883057248" data-ad-slot="9761783459"></ins>');
+				     } 	
+				    </script>	
+                                    <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script> 
+	        </li> 		
+            </ul>                        
+        </div>
+      
+	</div>
+        </div>
+</section>
+
+<script type="text/javascript" src="./Dynamic Memory Allocation in C++_files/footer.js.download"> </script><footer><div class="footer-bottom-sec"><div class="container_16"><div class="grid_16"><ul><li><a href="https://www.tutorialride.com/">Home</a></li><li><a href="https://www.tutorialride.com/about-us.htm">About us</a></li><li><a href="https://www.tutorialride.com/contactus.aspx">Contact us</a></li><li><a href="https://www.tutorialride.com/termsofuse.htm">Terms of use</a></li><li><a href="https://www.facebook.com/groups/CareerRide/">Follow us on Facebook!</a></li><div class="clear"></div></ul><div class="copyright">© Copyright 2017. All Rights Reserved.</div></div></div></div></footer>
+<script src="./Dynamic Memory Allocation in C++_files/jquery.min.js.download"></script>
+<script src="./Dynamic Memory Allocation in C++_files/config.js.download"></script>
+
+<a href="javascript:scrollWin();" class="scroll-to-top" style="display: none;">▲</a>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79507551-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+<scribe-shadow id="shadow-root-scribe-elem" style="position: fixed; width: 0px; height: 0px; top: 0px; left: 0px; z-index: 2147483647; overflow: visible;"></scribe-shadow></body></html>
