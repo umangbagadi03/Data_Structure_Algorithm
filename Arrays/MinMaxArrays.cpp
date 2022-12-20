@@ -3,6 +3,9 @@
 #include<iostream>
 using namespace std;
 
+/*INT_MAX is a macro which represents the maximum integer value. Similarly, INT_MIN represents the 
+minimum integer value.*/
+
 int getMin(int num[], int n) {
     int mini = INT_MAX;
 
