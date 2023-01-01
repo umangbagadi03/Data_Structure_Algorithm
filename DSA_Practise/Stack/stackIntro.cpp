@@ -12,16 +12,16 @@ class stack {
         int size;
 
     // constructor
-    stack(int size) {
+    stack(int size) {   // stack mere parameter uske size
         this -> size = size;
         arr = new int[size];
         top = -1;
     
     }
-    void push(int element) {
-        if (size - top > 1) {
-            top ++;
-            arr[top] = element;
+    void push(int element) {   // push function
+        if (size - top > 1) {   // isme se pta chlta atleast ekk toh elment khali hai apne isme total size me se top ko minus kiya toh kam se kam ekk toh khli chaiye tab hi push hoga n
+            top ++;     // top ko ++ karenge add karenge toh aage badhega n top
+            arr[top] = element;      // top k jagh pr elemnt copy kar liya
         }
         else {
             cout << " Stack overflow" << endl;
@@ -29,7 +29,7 @@ class stack {
     }
 
     void push(int element) {
-        if (size - top > 1) {
+        if (size - top > 1) {   /// kuch toh rhma chaiye n elemnt pop krne k liye isley chck ka rrhe
             top ++;
             arr[top] = element;
         }
@@ -39,8 +39,8 @@ class stack {
     }
 
     void pop() {
-        if(top <=0 ) {
-            top -- ;
+        if(top <=0 ) {    // quke top = -1 hogaya toh iska matlab empty hai toh kya hi pop karenge
+            top -- ;    // aur top --
 
         }
         else {
@@ -48,7 +48,7 @@ class stack {
         }
     }
     int peek() {
-        if (top >= 0) {
+        if (top >= 0) {   // isme top ka elemnt return krte
             return arr[top];
 
         }
@@ -59,8 +59,8 @@ class stack {
         }
     }
     bool isEmpty() {
-        if (top == -1) {
-            return true;
+        if (top == -1) {   // kabhi yad rakhna ki top = -1 rha matlab empty hai
+            return true;   
         }
         else {
             return false;
