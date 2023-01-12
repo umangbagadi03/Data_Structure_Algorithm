@@ -1,3 +1,22 @@
+/*
+Solution 1: Brute-Force
+
+Approach: We know intersection means a common attribute present between two entities. Here, we have linked lists as given entities. 
+What should be the common attribute for two linked lists? 
+
+If you believe a common attribute is a node’s value, then think properly! If we take our example 1, there we can see both 
+lists have nodes of value 3. But it is not the first intersection node. So what’s the common attribute?
+
+It is the node itself that is the common attribute. So, the process is as follows:-
+
+1.Keep any one of the list to check its node present in the other list. Here, we are choosing the second list for this task.
+2.Iterate through the other list. Here, it is the first one. 
+3.Check if the both nodes are the same. If yes, we got our first intersection node.
+4.If not, continue iteration.
+5.If we did not find an intersection node and completed the entire iteration of the second list, then there is no intersection 
+between the provided lists. Hence, return null.
+*/
+
 #include<iostream>
 using namespace std;
 
