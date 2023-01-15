@@ -1,3 +1,23 @@
+/*
+This is C++ code that performs a zigzag traversal of a binary tree. The code starts by defining a Tree Node struct, which 
+has 3 fields: an integer data, and pointers to left and right child nodes. Then a function called "buildTree" is defined, 
+which takes a string as input and returns the root of the tree built from the input string. The code then defines a class 
+called "Solution" which contains a public function called "zigZagTraversal" which takes the root of a binary tree as input 
+and returns a vector of integers representing the zigzag traversal of the tree.This function first checks if the root is 
+null, if it is, it returns an empty result vector. It then creates a queue and pushes the root onto the queue. It also 
+creates a boolean variable leftToRight and initializes it to true. The function then enters a while loop that continues 
+until the queue is empty. In each iteration of the loop, the size of the queue is stored in a variable "size". Then the 
+function creates a vector called "ans" of size "size".The function then enters a second loop that iterates size number of 
+times. In each iteration, it takes the front node of the queue and pushes its left and right children onto the queue if 
+they are not null. The function then calculates the index of the node in the ans vector by using the leftToRight variable. 
+If leftToRight is true, it uses the current index of the loop as the index, otherwise it uses size - i - 1 as the index. 
+This is because for left to right, the first element of the level should be at index 0, but for right to left, the first 
+element should be at the last index.The function then sets the leftToRight variable to its opposite value, effectively 
+reversing the direction of traversal. And it adds the elements of the ans vector to the result vector.
+
+Finally, the function returns the result vector.
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 #define MAX_HEIGHT 100000
