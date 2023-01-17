@@ -94,7 +94,7 @@ class Solution {
             return;
         }
 
-        summ = sum + root -> data;
+        sum = sum + root -> data;
 
         solve(root -> left, sum, maxSum, len+1, maxLen);
         solve(root -> right, sum, maxSum, len+1, maxLen);
