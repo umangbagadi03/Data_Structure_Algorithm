@@ -1,4 +1,4 @@
-class BinaryTreeNode {
+class TreeNode {
     public:
     T data;
     BinaryTreeNode<T> *left;
@@ -11,7 +11,7 @@ class BinaryTreeNode {
     }
 };
 
-void inorder(BinaryTreeNode<int>* root, vector<int> &in) {
+void inorder(TreeNode<int>* root, vector<int> &in) {
     if( root == NULL) {
         return;
     }
@@ -25,7 +25,7 @@ void inorder(BinaryTreeNode<int>* root, vector<int> &in) {
     inorder(root -> right, in);  // aur phir LNR me ka Right wala part kiya jayega
 }    
 
-BinaryTreeNode<int>* flatten(TreeNode<int>* root){
+TreeNode<int>* flatten(TreeNode<int>* root){
     vector<int> inorderVal;   // ekk vector bana inorder usme inorderVal dal diye
 
     // store inorder -> sorted values
