@@ -3,10 +3,10 @@
 class TreeNode {
     public:
     T data;
-    BinaryTreeNode<T> *left;
-    BinaryTreeNode<T> *right;
+    TreeNode<T> *left;
+    TreeNode<T> *right;
 
-    BinaryTreeNode(T data) {
+    TreeNode(T data) {
         this -> data = datal
         left = NULL;
         right = NULL;
