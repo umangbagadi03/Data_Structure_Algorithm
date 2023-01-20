@@ -46,3 +46,5 @@ TreeNode<int>* flatten(TreeNode<int>* root){
     inorder(root, inorderVal);   // firstly we have to store the BST tree in array using inorder trversal which will sort it
     
     return inorderToBST(0, inorderVal.size()-1, inorderVal);
+    
+}
