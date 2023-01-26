@@ -1,6 +1,6 @@
 // search in bst
 
-class BinaryTreeNode {
+class BinaryTreeNode<T> {
     public:
     T data;
     BinaryTreeNode<T> *left;
@@ -12,6 +12,7 @@ class BinaryTreeNode {
         right = NULL;
     }
 };
+
 bool searchInBST(BinaryTreeNode<int> *root, int x) {
     // using recursion
     BinaryTreeNode<T> *temp = root;
