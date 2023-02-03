@@ -23,30 +23,47 @@ returns the final reversed ans linked list.
 
 */
 
+#include<iostream>
+using namespace std;
+
+// Definition of a node in the linked list
+class Node
+{
+    public:
+    int data;
+    Node* next;
+    Node(int x)
+    {
+        data = x;
+        next = NULL;
+    }
+};
+
 class Solution
 {
     private:
     // Helper function to reverse a linked list
     Node* reverse(Node* head) {
-        
+        // initialize pointers to traverse the linked list
         Node* curr = head;
         Node* prev = NULL;
         Node* next = NULL;
         
+        // traverse the linked list and reverse the pointers
         while(curr != NULL) {
             next = curr -> next; 
-            curr -> next = prev;  // reversing the pointer of next node
+            curr -> next = prev;  // reverse the pointer to the next node
             prev = curr;
             curr = next;
         }
-        return prev; // return the new head
+        return prev; // return the new head of the reversed linked list
     }
     
     // Helper function to insert a node at the tail of a linked list
     void insertAtTail(struct Node* &head, struct Node* &tail, int val) {
-        
         Node* temp = new Node(val);
-        //empty list
+        
+        // if the linked list is empty
         if(head == NULL) {
             head = temp;
             tail = temp;
@@ -66,51 +83,40 @@ class Solution
         Node* ansHead = NULL;
         Node* ansTail = NULL;
         
+        // traverse both linked lists and add their values
         while(first != NULL || second != NULL || carry != 0) {
             
-            int val1 = 0;
+            int val1 = 0;      // get value from first linked list
             if(first != NULL)
                 val1 = first -> data;
                 
-            int val2 = 0;
+            int val2 = 0;   // get value from second linked list
             if(second !=NULL)
                 val2 = second -> data;
             
             // Sum the values and carry
-            int sum = carry + val1 + val2;
+            int sum = carry + val1 + val2;     // add the values and carry
             
             // Get the digit of the sum
-            int digit = sum%10;
+            int digit = sum%10;     // get the digit of the sum
             
             //create node and add in answer Linked List
             insertAtTail(ansHead, ansTail, digit);
             
             // Update the carry
-            carry = sum/10;
+            carry = sum/10;    // calculate the carry
             
             // Move to the next nodes of both the linked lists
             if(first != NULL)
-                first = first -> next;
+                first = first -> next;   // move to the next node of first linked list
             
             if(second != NULL)
-                second = second -> next;
+                second = second -> next; // move to the next node of second linked list
         }
         return ansHead; // return the head of the resulting linked list
     }
     public:
-    //Function to add two numbers represented by linked list.
+    // Function to add two numbers represented by linked list.
     struct Node* addTwoLists(struct Node* first, struct Node* second)
     {
-        //step 1 -  reverse input LL
-        first = reverse(first);
-        second = reverse(second);
-        
-        //step2 - add 2 LL
-        Node* ans = add(first, second);
-        
-        //step 3 
-        ans = reverse(ans);
-        
-        return ans;
-    }
-};
+        // Step 1: Reverse the input
