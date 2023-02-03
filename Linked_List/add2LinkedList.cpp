@@ -120,3 +120,16 @@ class Solution
     struct Node* addTwoLists(struct Node* first, struct Node* second)
     {
         // Step 1: Reverse the input
+        //step 1 -  reverse input LL
+        first = reverse(first);
+        second = reverse(second);
+        
+        //step2 - add 2 LL
+        Node* ans = add(first, second);
+        
+        //step 3 
+        ans = reverse(ans);   // jo linked list ko reverse krke add kiya uske output  ko wapes reverse karenge tab jake finela list milenege
+        
+        return ans;
+    }
+};
