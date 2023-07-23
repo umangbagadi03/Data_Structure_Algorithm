@@ -31,25 +31,25 @@ class node {
         }
 };
 
-// utility function to insert node at the end of the linked list
+// utility function to insert a node at the end of the linked list
 void insertNode(node* &head,int val) {
     node* newNode = new node(val); //create new node with value
     
-    // for first node
+    // for the first node
     if(head == NULL) {
         head = newNode;
         return;
     }
     
     node* temp = head;
-    //iterate to the end of the list
+    // Iterate to the end of the list
     while(temp->next != NULL) temp = temp->next;
     
     temp->next = newNode; // insert node at the end
     return;
 }
 
-// utility function to check presence of intersection  
+// utility function to check presence of an intersection  
 node* intersectionPresent(node* head1,node* head2) {   // head1 linked list 1 pe hai // head2 LL2 pe hai
     while(head2 != NULL) {    
         node* temp = head1;
