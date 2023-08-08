@@ -16,7 +16,6 @@ void selectionSort(vector<int>& arr,int n);
 int main(){
     int arr[] = {100,200,30,40,50,60,70,80};
     int n = sizeof(arr) / sizeof(arr[0]);
-    int result;
     
     SelectionSort(arr, n);
     
