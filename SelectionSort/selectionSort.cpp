@@ -13,17 +13,17 @@ void selectionSort(vector<int>& arr,int n);
         swap(arr[minIndex], arr[i]);
     }
 }
-int main() {
-    int arr[] = {80, 70, 60, 50, 40, 30, 20, 10};
+int main(){
+    int arr[] = {100,200,30,40,50,60,70,80};
     int n = sizeof(arr) / sizeof(arr[0]);
+    int result;
     
     SelectionSort(arr, n);
     
     cout << "Sorted Array is : ";
-    for(int i = 0; i < n; i++) {
+    
+    for(int i =0; i < n; i++){
         cout << arr[i] << " ";
     }
-    cout << endl;
-    
     return 0;
 }
