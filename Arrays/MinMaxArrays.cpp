@@ -1,52 +1,49 @@
-// to find min max in arrays 
-
-#include<iostream>
+#include <iostream>
+#include <limits.h>
 using namespace std;
 
-/*INT_MAX is a macro which represents the maximum integer value. Similarly, INT_MIN represents the 
-minimum integer value.*/
+// Function to find the minimum value in an array
+int minArray(int arr[], int n) {
+    int minVal = INT_MAX;  // Initialize minVal with a large value
 
-int getMin(int num[], int n) {
-    int mini = INT_MAX;
-
-    for(int i = 0, i < n, i++){
-        if(num[i]<min){
-            min = num[i]; 
+    // Loop through the array elements
+    for (int i = 0; i < n; i++) {
+        if (arr[i] < minVal) {
+            minVal = arr[i];  // Update minVal if a smaller value is found
         }
     }
-
-    // returning min value
-    return mini;
+    return minVal;  // Return the minimum value
 }
 
-// now for max 
-int getMax(int num[], int n) {
-    int maxi = INT_MIN;
-    for(int i = 0; i<n; i++) {
-        if(num[i] > max) {
-            max = num[i]
+// Function to find the maximum value in an array
+int maxArray(int arr[], int n) {
+    int maxVal = INT_MIN;  // Initialize maxVal with a small value
+
+    // Loop through the array elements
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > maxVal) {
+            maxVal = arr[i];  // Update maxVal if a larger value is found
         }
     }
-
-    // returning max values
-    return maxi;
+    return maxVal;  // Return the maximum value
 }
 
 int main() {
-    int size;
-    cin >> size;
+    int n;  // Declare n to store the array size
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
 
-    int num[100];
-
-    //taking input in array
-    for(int i = 0; i<size; i++){
-        cin >> num[i];
-
+    int arr[n];  // Declare the array after knowing its size
+    cout << "Enter elements of the array: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];  // Input array elements
     }
 
-    cout << " Maximum value is " << getMax(num, size) << endl;
-    cout << " Minimum value is " << getMin(num, size) << endl;
+    int minValue = minArray(arr, n);  // Call the function to find minimum
+    int maxValue = maxArray(arr, n);  // Call the function to find maximum
 
+    cout << "Min value in Array: " << minValue << endl;
+    cout << "Max value in Array: " << maxValue << endl;
 
-    return 0;
+    return 0;  // Return 0 to indicate successful completion
 }
