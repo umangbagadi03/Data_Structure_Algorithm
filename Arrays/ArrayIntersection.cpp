@@ -5,7 +5,7 @@ using namespace std;
 vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
 
 {
-	int i = 0, j = 0;   // i aur j 2 pointer hai jo ki arr1 ka start me i hai j arr2 k
+    int i = 0, j = 0;   // i aur j 2 pointer hai jo ki arr1 ka start me i hai j arr2 k
     vector<int> ans;
     while(i<n && j<m) {    // n, m size hai arr1 aur arr2 k dono i aur j size k under hai tab tak loop chalega
     
@@ -23,6 +23,6 @@ vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, i
     	j++;
     }
     
-    }
+
     return ans;
 }
