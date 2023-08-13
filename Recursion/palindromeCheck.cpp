@@ -1,30 +1,30 @@
-// to check palindrome in string
-
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-bool checkPalindrome(string str, int i, int j) {  
-
-    // base case
-    if(i>j)
-        return false;
-    else {
-        // recursive call 
-        return checkPalindrome(STR,i+1,j-1);
+bool checkPalindrome(string str, int i, int j) {
+    // Base case
+    if (i >= j) {
+        return true;
     }
+
+    if (str[i] != str[j]) {
+        return false;
+    }
+
+    // Recursive case
+    return checkPalindrome(str, i++, j--);
 }
 
 int main() {
+    string input;
+    cout << "Enter a string: ";
+    cin >> input;
 
-    string name = "bookkoob";
-    cout << endl;
-
-    bool isPalindrome = checkPalindrome(name, 0, name.length()-1);
-
-    if(isPalindrome) {
-        cout << "Its a palindrome " << endl;
+    if (checkPalindrome(input, 0, input.length() - 1)) {
+        cout << "The string is a palindrome." << endl;
+    } else {
+        cout << "The string is not a palindrome." << endl;
     }
-    else {
-        cout << "Its not a palindrome" << endl;
-    }
+
+    return 0;
 }
