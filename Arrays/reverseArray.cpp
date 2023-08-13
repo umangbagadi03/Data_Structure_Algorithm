@@ -1,42 +1,45 @@
 // reverse array in cpp
 
-#include<iostream>
+#include <iostream>
+#include <limits.h>
 using namespace std;
 
-// function to reverse array
+// Function to reverse an array
 void reverse(int arr[], int n) {
-    int start = 0;
-    int end = n-1;
+    int s = 0;
+    int e = n - 1; // Changed 'arr.size()' to 'n'
 
-    while(start <= end) {
-        swap(arr[start], arr[end]);
-        start++;
-        end--;
+    while (s <= e) {
+        swap(arr[s], arr[e]);
+        s++;
+        e--;
     }
 }
 
-
-// function to print array
+// Function to print an array
 void printArray(int arr[], int n) {
-
-    for(int i=0; i<n; i++){
-        cout << arr[i] <<" ";
-
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
     }
     cout << endl;
 }
 
 int main() {
-    int arr[6] = {1,4,0,5,-2,15};  // arr even
-    int brr[5] = {2,6,3,9,4};   // arr odd
+    int n;
+    cin >> n;
 
-    reverse(arr, 6);
-    reverse(brr, 5);
+    cout << "Enter elements of the array to be reversed: ";
+    int arr[n];
 
-    printArray(arr, 6);
-    printArray(brr, 5);
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
 
+    // Reverse the input array
+    reverse(arr, n);
+
+    // Print the reversed array
+    printArray(arr, n);
 
     return 0;
-
 }
