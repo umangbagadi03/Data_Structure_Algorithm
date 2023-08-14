@@ -1,4 +1,4 @@
-/*
+
 Given a sorted array of integers, find the number of negative numbers.
 
 Expected Time Complexity: O(log n)
@@ -9,7 +9,6 @@ Answer: 3
 Array: [0, 1, 2, 3, 4, 6, 7, 8]
 Answer: 0
 
-*/
 
 #include <iostream>
 #include <vector>
